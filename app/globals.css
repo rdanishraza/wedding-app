@@ -1,26 +1,1257 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap");
+
 @import "tailwindcss";
 
+/* ========================================================
+   ROOT
+======================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #fbf5eb;
+  --cream-light: #fffaf3;
+
+  --maroon: #741f2b;
+  --maroon-dark: #5e1721;
+
+  --gold: #b78a46;
+  --gold-soft: #caa566;
+
+  --brown: #765f55;
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Montserrat", Arial, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+
+  background: var(--cream);
+
+  color: var(--maroon);
+
+  font-family: var(--sans);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(116, 31, 43, 0.16);
+  color: var(--maroon);
+}
+
+/* ========================================================
+   PAGE
+======================================================== */
+
+.wedding-page {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at 50% 42%,
+    #fffdf8 0%,
+    #fbf3e8 52%,
+    #f4e5d4 100%
+  );
+}
+
+/* Subtle paper appearance */
+
+.wedding-page::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.19;
+
+  background-image: radial-gradient(
+    rgba(121, 82, 52, 0.11) 0.45px,
+    transparent 0.45px
+  );
+
+  background-size: 5px 5px;
+}
+
+/* ========================================================
+   HERO
+======================================================== */
+
+.wedding-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 50px 90px;
+
+  overflow: hidden;
+}
+
+.hero-light {
+  position: absolute;
+
+  top: 48%;
+  left: 50%;
+
+  width: 720px;
+  height: 720px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+/* ========================================================
+   ARCH
+======================================================== */
+
+.wedding-arch {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+.wedding-arch-outer {
+  top: 12%;
+
+  width: min(88vw, 1180px);
+  height: 79%;
+
+  border: 1.3px solid rgba(183, 138, 70, 0.48);
+
+  border-radius: 50% 50% 2px 2px / 16% 16% 2px 2px;
+}
+
+.wedding-arch-inner {
+  top: 14%;
+
+  width: min(85vw, 1130px);
+  height: 74.5%;
+
+  border: 1px solid rgba(183, 138, 70, 0.25);
+
+  border-radius: 50% 50% 2px 2px / 16% 16% 2px 2px;
+}
+
+/* ========================================================
+   SIDE DECORATION
+======================================================== */
+
+.side-glow {
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  border-radius: 50%;
+
+  filter: blur(75px);
+
+  pointer-events: none;
+}
+
+.side-glow-left {
+  left: -180px;
+  top: 34%;
+
+  background: rgba(187, 130, 93, 0.12);
+}
+
+.side-glow-right {
+  right: -180px;
+  bottom: 16%;
+
+  background: rgba(194, 154, 91, 0.14);
+}
+
+.side-decoration {
+  position: absolute;
+
+  color: var(--gold);
+
+  opacity: 0.26;
+
+  pointer-events: none;
+}
+
+.left-decoration {
+  left: 4%;
+  top: 35%;
+}
+
+.right-decoration {
+  right: 4%;
+  top: 39%;
+
+  transform: scaleX(-1);
+}
+
+.side-decoration span {
+  position: absolute;
+}
+
+.side-decoration .leaf {
+  font-size: 72px;
+}
+
+.side-decoration .flower {
+  top: 85px;
+  left: 35px;
+
+  font-size: 38px;
+
+  color: #a85b55;
+}
+
+.side-decoration .spark {
+  top: 135px;
+  left: 2px;
+
+  font-size: 23px;
+}
+
+/* ========================================================
+   CONTENT
+======================================================== */
+
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  max-width: 1000px;
+
+  margin-top: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.hero-top-ornament {
+  margin-bottom: 16px;
+
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 33px;
+
+  line-height: 1;
+
+  transform: scaleX(0.76);
+}
+
+.hero-eyebrow {
+  margin: 0 0 28px;
+
+  color: #97713c;
+
+  font-family: var(--sans);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.42em;
+
+  text-transform: uppercase;
+}
+
+/* ========================================================
+   NAMES
+======================================================== */
+
+.couple-name {
+  margin: 0;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: clamp(4.8rem, 7.6vw, 7.8rem);
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.035em;
+}
+
+.bride-name {
+  margin-top: 30px;
+}
+
+.wedding-heart {
+  margin-top: 35px;
+
+  color: #8c2c38;
+
+  font-family: Georgia, serif;
+
+  font-size: 37px;
+
+  line-height: 1;
+
+  animation: subtle-heart 3.3s ease-in-out infinite;
+}
+
+@keyframes subtle-heart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+/* ========================================================
+   DIVIDER
+======================================================== */
+
+.hero-divider {
+  width: 175px;
+
+  margin-top: 42px;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--gold);
+}
+
+.hero-divider span {
+  height: 1px;
+
+  background: rgba(183, 138, 70, 0.72);
+}
+
+.hero-divider i {
+  font-family: Georgia, serif;
+
+  font-size: 11px;
+
+  font-style: normal;
+}
+
+/* ========================================================
+   WEDDING DATES
+======================================================== */
+
+.wedding-date-container {
+  width: min(650px, 75%);
+
+  margin-top: 39px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1px
+    1fr;
+
+  align-items: center;
+}
+
+.wedding-date {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.date-icon {
+  margin-bottom: 10px;
+
+  color: #ad803c;
+}
+
+.date-main {
+  margin: 0;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: clamp(2rem, 3vw, 2.6rem);
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.date-caption {
+  margin: 10px 0 0;
+
+  color: var(--brown);
+
+  font-family: var(--sans);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+}
+
+.date-separator {
+  width: 1px;
+  height: 77px;
+
+  background: rgba(183, 138, 70, 0.53);
+}
+
+/* ========================================================
+   EXPLORE BUTTON
+======================================================== */
+
+.explore-wrapper {
+  margin-top: 38px;
+}
+
+.explore-button {
+  min-width: 310px;
+
+  height: 64px;
+
+  padding: 0 35px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  border: 1px solid rgba(208, 169, 102, 0.9);
+
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #7b2430, #6d1c28);
+
+  color: #fffaf5;
+
+  font-family: var(--serif);
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  box-shadow: 0 9px 24px rgba(88, 30, 37, 0.14);
+
+  transition:
+    transform 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.explore-button:hover {
+  transform: translateY(-4px);
+
+  background: linear-gradient(180deg, #6e1c28, #59141e);
+
+  box-shadow: 0 14px 32px rgba(88, 30, 37, 0.2);
+}
+
+.explore-button svg {
+  transition: transform 300ms ease;
+}
+
+.explore-button:hover svg {
+  transform: translateX(5px);
+}
+
+/* ========================================================
+   LOWER ORNAMENT
+======================================================== */
+
+.lower-ornament {
+  margin-top: 28px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--gold);
+}
+
+.lower-ornament span {
+  width: 45px;
+  height: 1px;
+
+  background: rgba(183, 138, 70, 0.65);
+}
+
+.lower-ornament b {
+  font-family: Georgia, serif;
+
+  font-size: 16px;
+
+  font-weight: normal;
+}
+
+/* ========================================================
+   TOP ORNAMENT
+======================================================== */
+
+.wedding-corner-ornament {
+  position: fixed;
+
+  z-index: 60;
+
+  top: 31px;
+  left: 37px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  color: #a47737;
+}
+
+.wedding-corner-ornament span:first-child {
+  font-size: 25px;
+}
+
+.wedding-corner-ornament span:last-child {
+  font-size: 24px;
+
+  transform: rotate(-25deg);
+}
+
+/* ========================================================
+   MENU BUTTON
+======================================================== */
+
+.wedding-menu-button {
+  position: fixed;
+
+  z-index: 120;
+
+  top: 27px;
+  right: 35px;
+
+  width: 62px;
+  height: 62px;
+
+  padding: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid rgba(183, 138, 70, 0.18);
+
+  border-radius: 50%;
+
+  background: rgba(255, 249, 240, 0.94);
+
+  color: var(--maroon);
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 22px rgba(92, 57, 32, 0.07);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.wedding-menu-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 28px rgba(92, 57, 32, 0.12);
+}
+
+/* ========================================================
+   DRAWER
+======================================================== */
+
+.wedding-menu-backdrop {
+  position: fixed;
+
+  z-index: 100;
+
+  inset: 0;
+
+  background: rgba(73, 39, 31, 0.18);
+
+  backdrop-filter: blur(5px);
+}
+
+.wedding-menu-panel {
+  position: fixed;
+
+  z-index: 110;
+
+  top: 0;
+  right: 0;
+
+  width: min(420px, 88vw);
+
+  height: 100svh;
+
+  padding: 84px 48px 42px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: linear-gradient(150deg, #fffaf3, #f8ead9);
+
+  border-left: 1px solid rgba(183, 138, 70, 0.28);
+
+  box-shadow: -22px 0 60px rgba(62, 34, 27, 0.12);
+}
+
+.wedding-menu-close {
+  position: absolute;
+
+  top: 27px;
+  left: 31px;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid rgba(183, 138, 70, 0.24);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  color: var(--maroon);
+
+  cursor: pointer;
+}
+
+.menu-ornament {
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 35px;
+
+  text-align: center;
+}
+
+.menu-small-title {
+  margin: 8px 0 39px;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: 26px;
+
+  text-align: center;
+}
+
+.menu-small-title span {
+  color: var(--gold);
+}
+
+.wedding-nav {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.wedding-nav a {
+  position: relative;
+
+  padding: 13px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    37px
+    1fr;
+
+  align-items: center;
+
+  color: #503932;
+
+  border-bottom: 1px solid rgba(183, 138, 70, 0.13);
+
+  font-family: var(--serif);
+
+  font-size: 25px;
+
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.wedding-nav a:hover {
+  color: var(--maroon);
+
+  transform: translateX(6px);
+}
+
+.nav-index {
+  color: #a77d45;
+
+  font-family: var(--sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+}
+
+.menu-footer {
+  margin-top: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--gold);
+}
+
+.menu-footer span {
+  height: 1px;
+
+  background: rgba(183, 138, 70, 0.35);
+}
+
+.menu-footer p {
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: 16px;
+}
+
+/* ========================================================
+   TABLET
+======================================================== */
+
+@media (max-width: 900px) {
+  .wedding-hero {
+    padding: 80px 26px 90px;
+  }
+
+  .wedding-arch-outer {
+    width: 92vw;
+
+    height: 80%;
+  }
+
+  .wedding-arch-inner {
+    width: 88vw;
+
+    height: 75.5%;
+  }
+
+  .couple-name {
+    font-size: clamp(4.3rem, 10vw, 6.3rem);
+  }
+
+  .wedding-date-container {
+    width: 78%;
+  }
+
+  .side-decoration {
+    opacity: 0.17;
+  }
+}
+
+/* ========================================================
+   DESKTOP / TABLET NAVIGATION
+======================================================== */
+
+.desktop-wedding-header {
+  position: fixed;
+
+  z-index: 90;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 22px 38px;
+
+  background: rgba(251, 245, 235, 0.82);
+
+  border-bottom: 1px solid rgba(183, 138, 70, 0.16);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.desktop-header-inner {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+}
+
+/* ========================================================
+   DESKTOP BRAND
+======================================================== */
+
+.desktop-brand {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.03em;
+
+  text-decoration: none;
+}
+
+.desktop-brand i {
+  color: #a77d45;
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
+
+  font-style: normal;
+}
+
+/* ========================================================
+   DESKTOP LINKS
+======================================================== */
+
+.desktop-navigation {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: clamp(18px, 2vw, 34px);
+}
+
+.desktop-nav-link {
+  position: relative;
+
+  padding: 7px 0;
+
+  color: #755f55;
+
+  font-family: var(--sans);
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition: color 250ms ease;
+}
+
+.desktop-nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: var(--gold);
+
+  transition: width 300ms ease;
+}
+
+.desktop-nav-link:hover {
+  color: var(--maroon);
+}
+
+.desktop-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile controls hidden on desktop/tablet */
+
+.mobile-navigation {
+  display: none;
+}
+
+/* ========================================================
+   MOBILE
+======================================================== */
+
+/* ========================================================
+   SWITCH DESKTOP NAV -> MOBILE MENU
+======================================================== */
+
+@media (max-width: 767px) {
+  .desktop-wedding-header {
+    display: none;
+  }
+
+  .mobile-navigation {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .wedding-hero {
+    min-height: 100svh;
+
+    padding: 90px 16px 73px;
+  }
+
+  .hero-light {
+    width: 430px;
+    height: 500px;
+  }
+
+  .wedding-corner-ornament {
+    top: 21px;
+    left: 19px;
+  }
+
+  .wedding-corner-ornament span:first-child {
+    font-size: 20px;
+  }
+
+  .wedding-corner-ornament span:last-child {
+    font-size: 19px;
+  }
+
+  .wedding-menu-button {
+    top: 17px;
+    right: 18px;
+
+    width: 52px;
+    height: 52px;
+  }
+
+  .wedding-menu-button svg {
+    width: 23px;
+  }
+
+  .wedding-arch-outer {
+    top: 8.7%;
+
+    width: calc(100vw - 24px);
+
+    height: 81%;
+
+    border-radius: 50% 50% 0 0 / 9.5% 9.5% 0 0;
+  }
+
+  .wedding-arch-inner {
+    top: 10%;
+
+    width: calc(100vw - 42px);
+
+    height: 78.5%;
+
+    border-radius: 50% 50% 0 0 / 9.5% 9.5% 0 0;
+  }
+
+  .hero-content {
+    margin-top: 19px;
+  }
+
+  .hero-top-ornament {
+    margin-bottom: 11px;
+
+    font-size: 27px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 24px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.31em;
+  }
+
+  .couple-name {
+    font-size: clamp(3.2rem, 14vw, 4.3rem);
+
+    line-height: 0.88;
+  }
+
+  .bride-name {
+    margin-top: 22px;
+  }
+
+  .wedding-heart {
+    margin-top: 25px;
+
+    font-size: 29px;
+  }
+
+  .hero-divider {
+    width: 120px;
+
+    margin-top: 31px;
+  }
+
+  .wedding-date-container {
+    width: 91%;
+
+    margin-top: 29px;
+  }
+
+  .date-main {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .date-icon {
+    width: 23px;
+
+    margin-bottom: 8px;
+  }
+
+  .date-caption {
+    margin-top: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.14em;
+  }
+
+  .date-separator {
+    height: 64px;
+  }
+
+  .explore-wrapper {
+    margin-top: 31px;
+  }
+
+  .explore-button {
+    min-width: 0;
+
+    width: min(78vw, 325px);
+
+    height: 57px;
+
+    padding: 0 25px;
+
+    gap: 13px;
+
+    font-size: 18px;
+  }
+
+  .lower-ornament {
+    margin-top: 22px;
+  }
+
+  .lower-ornament span {
+    width: 31px;
+  }
+
+  .side-decoration {
+    display: none;
+  }
+
+  .wedding-menu-panel {
+    width: 91vw;
+
+    padding: 79px 32px 35px;
+  }
+
+  .wedding-nav a {
+    padding: 11px 0;
+
+    font-size: 22px;
+  }
+}
+
+/* ========================================================
+   SHORT SCREENS
+======================================================== */
+
+@media (max-height: 760px) and (min-width: 601px) {
+  .wedding-hero {
+    padding-top: 70px;
+  }
+
+  .couple-name {
+    font-size: clamp(4rem, 7vw, 6rem);
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .wedding-heart {
+    margin-top: 24px;
+  }
+
+  .bride-name {
+    margin-top: 22px;
+  }
+
+  .hero-divider {
+    margin-top: 28px;
+  }
+
+  .wedding-date-container {
+    margin-top: 25px;
+  }
+
+  .explore-wrapper {
+    margin-top: 26px;
+  }
+
+  .lower-ornament {
+    margin-top: 16px;
+  }
+}
+
+/* ========================================================
+   ACCESSIBILITY
+======================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+.desktop-nav-link-active {
+  color: var(--maroon);
+}
+
+.desktop-nav-link-active::after {
+  width: 100%;
+}
+
+.mobile-nav-link-active {
+  color: var(--maroon) !important;
+}
+
+.mobile-nav-link-active .nav-index {
+  color: var(--gold);
+}
+
+.active-nav-diamond {
+  margin-left: auto;
+
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 12px;
 }

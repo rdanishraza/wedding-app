@@ -1,0 +1,1392 @@
+/* =========================================================
+   WEDDING PAGE
+========================================================= */
+
+.weddingPage {
+  --page-bg: #faf2e8;
+  --page-light: #fffaf4;
+
+  --maroon: #76202a;
+  --maroon-dark: #5f1821;
+
+  --gold: #b7863f;
+  --gold-light: #d4b06e;
+
+  --text: #594c45;
+  --soft-text: #766158;
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+
+  --sans: "Montserrat", Arial, sans-serif;
+
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at 50% 20%,
+    #fffdf8 0%,
+    #faf2e8 54%,
+    #f4e3d2 100%
+  );
+
+  color: var(--text);
+}
+
+/* paper texture */
+
+.weddingPage::before {
+  content: "";
+
+  position: fixed;
+  z-index: 0;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.17;
+
+  background-image: radial-gradient(
+    rgba(112, 72, 45, 0.12) 0.5px,
+    transparent 0.5px
+  );
+
+  background-size: 5px 5px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  z-index: 1;
+
+  min-height: 100svh;
+
+  padding: 145px 210px 80px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid rgba(183, 134, 63, 0.23);
+}
+
+.heroBackground {
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 249, 0.98) 0%,
+    rgba(251, 244, 235, 0.94) 63%,
+    rgba(243, 227, 209, 0.9) 100%
+  );
+}
+
+/* =========================================================
+   SIDE PANELS
+========================================================= */
+
+.sidePanel {
+  position: absolute;
+
+  top: 105px;
+  bottom: 26px;
+
+  width: 175px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(184, 137, 68, 0.28);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 250, 244, 0.62),
+    rgba(244, 229, 211, 0.78)
+  );
+}
+
+.leftPanel {
+  left: 0;
+
+  border-radius: 0 100px 0 0;
+}
+
+.rightPanel {
+  right: 0;
+
+  border-radius: 100px 0 0 0;
+}
+
+.sidePanel p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: #66554d;
+
+  font-family: var(--sans);
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  line-height: 2.15;
+
+  letter-spacing: 0.36em;
+
+  text-align: center;
+}
+
+.sideLine {
+  width: 41px;
+  height: 1px;
+
+  margin-top: 15px;
+
+  background: rgba(183, 134, 63, 0.7);
+}
+
+.sideFlowers {
+  position: absolute;
+
+  top: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  color: rgba(168, 105, 84, 0.35);
+}
+
+.sideFlowers span:nth-child(1) {
+  font-size: 45px;
+}
+
+.sideFlowers span:nth-child(2) {
+  margin-left: -8px;
+
+  font-size: 33px;
+
+  color: rgba(183, 134, 63, 0.45);
+}
+
+.sideFlowers span:nth-child(3) {
+  position: absolute;
+
+  top: 45px;
+  right: -10px;
+
+  color: rgba(183, 134, 63, 0.55);
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   HERO ARCH
+========================================================= */
+
+.mainArch,
+.innerArch {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+.mainArch {
+  top: 108px;
+
+  width: min(69vw, 990px);
+
+  height: 77%;
+
+  border: 1px solid rgba(183, 134, 63, 0.42);
+
+  border-radius: 50% 50% 2px 2px / 15% 15% 2px 2px;
+}
+
+.innerArch {
+  top: 126px;
+
+  width: min(66vw, 945px);
+
+  height: 73%;
+
+  border: 1px solid rgba(183, 134, 63, 0.18);
+
+  border-radius: 50% 50% 2px 2px / 15% 15% 2px 2px;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.heroContent {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 800px;
+
+  text-align: center;
+}
+
+.topOrnament,
+.middleOrnament {
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+}
+
+.topOrnament {
+  margin-bottom: 19px;
+
+  font-size: 26px;
+}
+
+.heroBlessing,
+.heroInvitation {
+  margin: 0;
+
+  font-family: var(--sans);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+}
+
+.heroBlessing {
+  color: #534640;
+
+  font-weight: 500;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.4em;
+}
+
+.heroInvitation {
+  margin-top: 27px;
+
+  color: #5b4d47;
+
+  line-height: 1.85;
+
+  letter-spacing: 0.36em;
+}
+
+/* =========================================================
+   NAMES
+========================================================= */
+
+.coupleName {
+  margin: 23px 0 0;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: clamp(4.8rem, 7.2vw, 7.6rem);
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.045em;
+}
+
+.nameSeparator {
+  width: max-content;
+
+  margin: 12px auto;
+
+  display: grid;
+
+  grid-template-columns: 70px auto 70px;
+
+  align-items: center;
+
+  gap: 14px;
+
+  color: var(--gold);
+}
+
+.nameSeparator span {
+  height: 1px;
+
+  background: rgba(183, 134, 63, 0.65);
+}
+
+.nameSeparator b {
+  font-family: var(--serif);
+
+  font-size: 35px;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.middleOrnament {
+  margin-top: 31px;
+
+  font-size: 22px;
+}
+
+.heroTagline {
+  margin-top: 18px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  color: #62544e;
+
+  font-family: var(--sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.27em;
+
+  text-transform: uppercase;
+}
+
+.heroTagline span {
+  color: var(--gold);
+}
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section {
+  position: relative;
+  z-index: 1;
+
+  padding: 68px 8%;
+
+  border-bottom: 1px solid rgba(183, 134, 63, 0.22);
+
+  background: rgba(255, 251, 246, 0.53);
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.sectionHeading {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.headingOrnament {
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 22px;
+}
+
+.sectionHeading h2 {
+  margin: 10px 0 0;
+
+  color: #4c413c;
+
+  font-family: var(--serif);
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+.sectionHeading p {
+  margin: 8px 0 0;
+
+  color: #8a7468;
+
+  font-family: var(--serif);
+
+  font-size: 15px;
+
+  font-style: italic;
+}
+
+.headingLine {
+  width: 90px;
+
+  margin-top: 13px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--gold);
+}
+
+.headingLine span {
+  height: 1px;
+
+  background: rgba(183, 134, 63, 0.4);
+}
+
+.headingLine b {
+  font-size: 8px;
+
+  font-weight: normal;
+}
+
+/* =========================================================
+   COUPLE
+========================================================= */
+
+.coupleGrid {
+  max-width: 1100px;
+
+  margin: 52px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1px
+    1fr;
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+.coupleProfile {
+  display: grid;
+
+  grid-template-columns:
+    185px
+    1fr;
+
+  align-items: center;
+
+  gap: 35px;
+}
+
+.coupleProfile:nth-child(3) {
+  grid-template-columns:
+    1fr
+    185px;
+}
+
+.coupleProfile:nth-child(3) .portraitArch {
+  order: 2;
+}
+
+.coupleProfile:nth-child(3) .profileContent {
+  order: 1;
+}
+
+/* portrait */
+
+.portraitArch {
+  position: relative;
+
+  width: 180px;
+  height: 250px;
+
+  border: 1px solid rgba(183, 134, 63, 0.38);
+
+  border-radius: 100px 100px 3px 3px;
+
+  background: linear-gradient(180deg, #fffaf4, #f4e5d5);
+}
+
+.portraitInner {
+  position: absolute;
+  inset: 10px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(183, 134, 63, 0.16);
+
+  border-radius: 90px 90px 2px 2px;
+
+  background: linear-gradient(180deg, #fffaf4, #f4e5d5);
+}
+
+.coupleImage {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* .initial {
+  color: rgba(114, 32, 42, 0.75);
+
+  font-family: var(--serif);
+
+  font-size: 93px;
+
+  font-style: italic;
+} */
+
+.portraitFlowers {
+  position: absolute;
+
+  bottom: -15px;
+  left: 13px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  color: rgba(170, 101, 78, 0.55);
+}
+
+.portraitFlowers span:nth-child(1) {
+  font-size: 41px;
+}
+
+.portraitFlowers span:nth-child(2) {
+  margin-left: -5px;
+
+  color: rgba(183, 134, 63, 0.65);
+
+  font-size: 36px;
+}
+
+.portraitFlowers span:nth-child(3) {
+  margin-left: -5px;
+
+  color: var(--gold);
+
+  font-size: 16px;
+}
+
+/* couple text */
+
+.profileContent h3 {
+  margin: 0;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: 37px;
+
+  font-weight: 500;
+}
+
+.role {
+  margin: 7px 0 0;
+
+  color: #9a5549;
+
+  font-family: var(--sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.5em;
+
+  text-transform: uppercase;
+}
+
+.profileDivider {
+  width: 115px;
+
+  margin-top: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--gold);
+}
+
+.profileDivider span {
+  height: 1px;
+
+  background: rgba(183, 134, 63, 0.36);
+}
+
+.profileDivider b {
+  font-size: 9px;
+
+  font-weight: normal;
+}
+
+.profileDescription {
+  max-width: 280px;
+
+  margin-top: 16px;
+
+  color: #62554f;
+
+  font-family: var(--serif);
+
+  font-size: 17px;
+
+  line-height: 1.55;
+}
+
+/* middle divider */
+
+.verticalDivider {
+  height: 195px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  color: var(--gold);
+}
+
+.verticalDivider span {
+  width: 1px;
+
+  flex: 1;
+
+  background: rgba(183, 134, 63, 0.42);
+}
+
+.verticalDivider b {
+  margin: 7px 0;
+
+  font-size: 14px;
+
+  font-weight: normal;
+}
+
+/* =========================================================
+   SPECIAL DAYS
+========================================================= */
+
+.daysSection {
+  overflow: hidden;
+}
+
+.daysGrid {
+  position: relative;
+  z-index: 2;
+
+  width: min(850px, 100%);
+
+  margin: 50px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 35px;
+}
+
+.dayCard {
+  min-height: 285px;
+
+  padding: 47px 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  border: 1px solid rgba(183, 134, 63, 0.28);
+
+  border-radius: 130px 130px 2px 2px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 252, 247, 0.92),
+    rgba(247, 235, 221, 0.74)
+  );
+
+  text-align: center;
+
+  box-shadow: inset 0 0 25px rgba(183, 134, 63, 0.03);
+}
+
+.calendarIcon {
+  color: var(--maroon);
+}
+
+.dayCard h3 {
+  margin: 16px 0 0;
+
+  color: var(--maroon);
+
+  font-family: var(--serif);
+
+  font-size: 38px;
+
+  font-style: italic;
+
+  font-weight: 500;
+}
+
+.dayLabel {
+  margin: 7px 0 0;
+
+  color: #985448;
+
+  font-family: var(--sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.4em;
+
+  text-transform: uppercase;
+}
+
+.dayDivider {
+  width: 105px;
+
+  margin-top: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: var(--gold);
+}
+
+.dayDivider span {
+  height: 1px;
+
+  background: rgba(183, 134, 63, 0.38);
+}
+
+.dayDivider b {
+  font-size: 8px;
+
+  font-weight: normal;
+}
+
+.dayDescription {
+  max-width: 285px;
+
+  margin-top: 15px;
+
+  color: #625650;
+
+  font-family: var(--serif);
+
+  font-size: 17px;
+
+  line-height: 1.5;
+}
+
+.sideBotanicalLeft,
+.sideBotanicalRight {
+  position: absolute;
+
+  bottom: 35px;
+
+  color: rgba(183, 134, 63, 0.42);
+
+  font-family: Georgia, serif;
+
+  font-size: 105px;
+
+  pointer-events: none;
+}
+
+.sideBotanicalLeft {
+  left: 6%;
+
+  transform: rotate(-20deg);
+}
+
+.sideBotanicalRight {
+  right: 6%;
+
+  transform: scaleX(-1) rotate(-20deg);
+}
+
+/* =========================================================
+   BLESSING
+========================================================= */
+
+.blessingSection {
+  position: relative;
+  z-index: 1;
+
+  padding: 70px 20px 75px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid rgba(183, 134, 63, 0.2);
+
+  background: linear-gradient(
+    90deg,
+    rgba(240, 224, 205, 0.72),
+    rgba(255, 250, 243, 0.94) 24%,
+    rgba(255, 250, 243, 0.94) 76%,
+    rgba(240, 224, 205, 0.72)
+  );
+
+  text-align: center;
+}
+
+.quranQuote {
+  margin: 32px 0 0;
+
+  color: #534843;
+
+  font-family: var(--serif);
+
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+
+  font-style: italic;
+}
+
+.quranReference {
+  margin-top: 13px;
+
+  color: #6e5d55;
+
+  font-family: var(--sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.42em;
+}
+
+.blessingText {
+  margin-top: 28px;
+
+  color: #5d514b;
+
+  font-family: var(--serif);
+
+  font-size: 19px;
+
+  line-height: 1.55;
+}
+
+/* decorative arches */
+
+.blessingArchLeft,
+.blessingArchRight {
+  position: absolute;
+
+  bottom: -80px;
+
+  width: 170px;
+  height: 275px;
+
+  border: 1px solid rgba(183, 134, 63, 0.34);
+
+  border-radius: 100px 100px 0 0;
+}
+
+.blessingArchLeft {
+  left: 4%;
+}
+
+.blessingArchRight {
+  right: 4%;
+}
+
+.lantern {
+  position: absolute;
+
+  top: 55px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(140, 90, 45, 0.55);
+
+  font-size: 42px;
+}
+
+/* =========================================================
+   FINAL SECTION
+========================================================= */
+
+.finalSection {
+  position: relative;
+  z-index: 1;
+
+  padding: 65px 20px 46px;
+
+  overflow: hidden;
+
+  background: rgba(255, 250, 244, 0.82);
+
+  text-align: center;
+}
+
+.finalMessage {
+  margin: 0;
+
+  color: #514641;
+
+  font-family: var(--sans);
+
+  font-size: 9px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0.38em;
+}
+
+.finalOrnament {
+  margin-top: 12px;
+
+  color: var(--gold);
+
+  font-size: 20px;
+}
+
+.scheduleButton {
+  width: min(400px, 88vw);
+
+  min-height: 61px;
+
+  margin: 18px auto 0;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  border: 1px solid #c69a55;
+
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #8a2832, #711d27);
+
+  color: #fff8f0;
+
+  font-family: var(--sans);
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  box-shadow: 0 9px 24px rgba(101, 29, 37, 0.18);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.scheduleButton:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 14px 30px rgba(101, 29, 37, 0.23);
+}
+
+.scheduleButton svg {
+  transition: transform 250ms ease;
+}
+
+.scheduleButton:hover svg {
+  transform: translateX(5px);
+}
+
+.finalDivider {
+  width: 205px;
+
+  margin: 32px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--gold);
+}
+
+.finalDivider span {
+  height: 1px;
+
+  background: rgba(183, 134, 63, 0.45);
+}
+
+.finalDivider b {
+  font-size: 15px;
+
+  font-weight: normal;
+}
+
+.finalName {
+  margin-top: 16px;
+
+  color: #675850;
+
+  font-family: var(--sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.48em;
+}
+
+.finalFlowerLeft,
+.finalFlowerRight {
+  position: absolute;
+
+  bottom: -20px;
+
+  color: rgba(170, 103, 81, 0.35);
+
+  font-size: 95px;
+
+  pointer-events: none;
+}
+
+.finalFlowerLeft {
+  left: -15px;
+}
+
+.finalFlowerRight {
+  right: -15px;
+
+  transform: scaleX(-1);
+}
+
+.finalFlowerLeft span,
+.finalFlowerRight span {
+  color: rgba(183, 134, 63, 0.45);
+
+  font-size: 65px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    padding: 140px 145px 80px;
+  }
+
+  .sidePanel {
+    width: 115px;
+  }
+
+  .mainArch {
+    width: 72vw;
+  }
+
+  .innerArch {
+    width: 68vw;
+  }
+
+  .coupleGrid {
+    gap: 27px;
+  }
+
+  .coupleProfile {
+    grid-template-columns:
+      145px
+      1fr;
+
+    gap: 22px;
+  }
+
+  .coupleProfile:nth-child(3) {
+    grid-template-columns:
+      1fr
+      145px;
+  }
+
+  .portraitArch {
+    width: 142px;
+    height: 215px;
+  }
+
+  .profileContent h3 {
+    font-size: 31px;
+  }
+
+  .sideBotanicalLeft,
+  .sideBotanicalRight {
+    opacity: 0.45;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 940px;
+
+    padding: 125px 21px 72px;
+  }
+
+  .sidePanel {
+    display: none;
+  }
+
+  .mainArch {
+    top: 96px;
+
+    width: calc(100vw - 26px);
+
+    height: 80%;
+
+    border-radius: 50% 50% 0 0 / 9% 9% 0 0;
+  }
+
+  .innerArch {
+    top: 111px;
+
+    width: calc(100vw - 46px);
+
+    height: 76.5%;
+
+    border-radius: 50% 50% 0 0 / 9% 9% 0 0;
+  }
+
+  .heroBlessing,
+  .heroInvitation {
+    font-size: 7px;
+  }
+
+  .heroBlessing {
+    letter-spacing: 0.3em;
+  }
+
+  .heroInvitation {
+    letter-spacing: 0.27em;
+  }
+
+  .coupleName {
+    font-size: clamp(3.8rem, 17vw, 5.3rem);
+
+    line-height: 0.9;
+  }
+
+  .nameSeparator {
+    grid-template-columns:
+      45px
+      auto
+      45px;
+  }
+
+  .heroTagline {
+    padding: 0 22px;
+
+    flex-wrap: wrap;
+
+    gap: 7px 10px;
+
+    font-size: 6px;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.19em;
+  }
+
+  /* sections */
+
+  .section {
+    padding: 52px 20px;
+  }
+
+  .sectionHeading h2 {
+    font-size: 22px;
+
+    letter-spacing: 0.15em;
+  }
+
+  /* couple */
+
+  .coupleGrid {
+    margin-top: 43px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .verticalDivider {
+    display: none;
+  }
+
+  .coupleProfile,
+  .coupleProfile:nth-child(3) {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    text-align: center;
+  }
+
+  .coupleProfile:nth-child(3) .portraitArch,
+  .coupleProfile:nth-child(3) .profileContent {
+    order: initial;
+  }
+
+  .portraitArch {
+    width: 175px;
+    height: 235px;
+
+    margin: 0 auto;
+  }
+
+  .profileDivider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profileDescription {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* dates */
+
+  .daysGrid {
+    grid-template-columns: 1fr;
+
+    max-width: 390px;
+  }
+
+  .dayCard {
+    min-height: 265px;
+
+    padding: 42px 28px;
+  }
+
+  .sideBotanicalLeft,
+  .sideBotanicalRight {
+    display: none;
+  }
+
+  /* blessing */
+
+  .blessingSection {
+    padding: 59px 24px 65px;
+  }
+
+  .blessingArchLeft,
+  .blessingArchRight {
+    opacity: 0.25;
+
+    width: 90px;
+  }
+
+  .blessingArchLeft {
+    left: -30px;
+  }
+
+  .blessingArchRight {
+    right: -30px;
+  }
+
+  .quranQuote {
+    font-size: 29px;
+  }
+
+  .blessingText {
+    font-size: 17px;
+  }
+
+  .blessingText br {
+    display: none;
+  }
+
+  /* final */
+
+  .finalSection {
+    padding: 57px 20px 42px;
+  }
+
+  .finalMessage {
+    padding: 0 15px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.27em;
+  }
+
+  .scheduleButton {
+    min-height: 57px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.22em;
+  }
+
+  .finalFlowerLeft,
+  .finalFlowerRight {
+    font-size: 60px;
+
+    opacity: 0.5;
+  }
+}

@@ -1,69 +1,260 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { motion } from "motion/react";
+import { ArrowRight, CalendarDays } from "lucide-react";
+
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="wedding-page">
+      <Navbar />
+
+      <section className="wedding-hero">
+        {/* Background light */}
+        <div className="hero-light" />
+
+        {/* Decorative side glows */}
+        <div className="side-glow side-glow-left" />
+        <div className="side-glow side-glow-right" />
+
+        {/* Main double arch */}
+        <div className="wedding-arch wedding-arch-outer" />
+        <div className="wedding-arch wedding-arch-inner" />
+
+        {/* Subtle decorative elements */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 1.3,
+            delay: 0.5,
+          }}
+          className="side-decoration left-decoration"
+          aria-hidden="true"
+        >
+          <span className="leaf">❧</span>
+          <span className="flower">❀</span>
+          <span className="spark">✦</span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 1.3,
+            delay: 0.5,
+          }}
+          className="side-decoration right-decoration"
+          aria-hidden="true"
+        >
+          <span className="leaf">❧</span>
+          <span className="flower">❀</span>
+          <span className="spark">✦</span>
+        </motion.div>
+
+        {/* Main content */}
+        <div className="hero-content">
+          {/* top ornament */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -10,
+              scale: 0.8,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1,
+            }}
+            className="hero-top-ornament"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            ◇
+          </motion.div>
+
+          {/* Intro */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 12,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.15,
+            }}
+            className="hero-eyebrow"
           >
-            Documentation
-          </a>
+            Together with our families
+          </motion.p>
+
+          {/* Groom */}
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 22,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1.1,
+              delay: 0.35,
+            }}
+            className="couple-name"
+          >
+            Danish Raza
+          </motion.h1>
+
+          {/* Heart */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.3,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 170,
+              damping: 13,
+              delay: 0.75,
+            }}
+            className="wedding-heart"
+          >
+            ♥
+          </motion.div>
+
+          {/* Bride */}
+          <motion.h2
+            initial={{
+              opacity: 0,
+              y: 22,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1.1,
+              delay: 0.55,
+            }}
+            className="couple-name bride-name"
+          >
+            Rubina Khatoon
+          </motion.h2>
+
+          {/* Divider */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              scaleX: 0,
+            }}
+            animate={{
+              opacity: 1,
+              scaleX: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.9,
+            }}
+            className="hero-divider"
+          >
+            <span />
+            <i>◇</i>
+            <span />
+          </motion.div>
+
+          {/* Dates */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 1.05,
+            }}
+            className="wedding-date-container"
+          >
+            <WeddingDate date="16 December" label="Wedding Day" />
+
+            <div className="date-separator" />
+
+            <WeddingDate date="18 December" label="Walima / Reception" />
+          </motion.div>
+
+          {/* Button */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 1.3,
+            }}
+            className="explore-wrapper"
+          >
+            <Link href="/wedding" className="explore-button">
+              <span>Explore Our Wedding</span>
+
+              <ArrowRight size={21} strokeWidth={1.5} />
+            </Link>
+          </motion.div>
+
+          {/* lower decorative piece */}
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay: 1.7,
+            }}
+            className="lower-ornament"
+          >
+            <span />
+
+            <b>❧</b>
+
+            <span />
+          </motion.div>
         </div>
-      </main>
+      </section>
+    </main>
+  );
+}
+
+function WeddingDate({ date, label }: { date: string; label: string }) {
+  return (
+    <div className="wedding-date">
+      <CalendarDays className="date-icon" size={27} strokeWidth={1.3} />
+
+      <p className="date-main">{date}</p>
+
+      <p className="date-caption">{label}</p>
     </div>
   );
 }
