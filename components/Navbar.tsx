@@ -174,7 +174,7 @@ export default function Navbar() {
               </button>
 
               {/* Ornament */}
-              <div className="menu-ornament">◇</div>
+              <div className="menu-ornament">♥</div>
 
               {/* Couple */}
               <p className="menu-small-title">

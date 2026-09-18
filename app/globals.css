@@ -1255,3 +1255,13 @@ button {
 
   font-size: 12px;
 }
+
+.menu-ornament {
+  display: block;
+  color: var(--maroon);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 10px;
+}

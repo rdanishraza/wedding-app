@@ -1,0 +1,1575 @@
+/* =========================================================
+   SCHEDULE PAGE
+========================================================= */
+
+.schedulePage {
+  --schedule-cream: #fbf3e7;
+  --schedule-light: #fffaf2;
+
+  --schedule-maroon: #78232b;
+  --schedule-maroon-dark: #601921;
+
+  --schedule-gold: #b17d3b;
+  --schedule-gold-soft: #d4ad72;
+
+  --schedule-brown: #59463e;
+  --schedule-muted: #77645b;
+
+  --schedule-green: #68705b;
+  --schedule-green-dark: #4f5949;
+
+  --schedule-blush: #d9b19d;
+
+  --schedule-serif: "Cormorant Garamond", Georgia, serif;
+
+  --schedule-sans: "Montserrat", Arial, sans-serif;
+
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at 50% 20%,
+    #fffdf7 0%,
+    #fbf4e9 46%,
+    #f4e4d1 100%
+  );
+
+  color: var(--schedule-brown);
+}
+
+/* =========================================================
+   PAPER TEXTURE
+========================================================= */
+
+.paperTexture {
+  position: fixed;
+
+  z-index: 0;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.34;
+
+  background-image:
+    radial-gradient(rgba(115, 78, 49, 0.12) 0.45px, transparent 0.45px),
+    linear-gradient(
+      115deg,
+      transparent 45%,
+      rgba(165, 122, 76, 0.035) 50%,
+      transparent 55%
+    );
+
+  background-size:
+    5px 5px,
+    180px 180px;
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.pageContent {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(100%, 1180px);
+
+  margin: 0 auto;
+
+  padding: 145px 40px 55px;
+}
+
+/* =========================================================
+   BACKGROUND ARCHITECTURE
+========================================================= */
+
+.architecturePanel {
+  position: absolute;
+
+  z-index: 1;
+
+  top: 78px;
+
+  width: 215px;
+  height: 650px;
+
+  opacity: 0.52;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(177, 125, 59, 0.24);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 249, 240, 0.2),
+    rgba(238, 216, 190, 0.28)
+  );
+}
+
+.leftArchitecture {
+  left: 0;
+}
+
+.rightArchitecture {
+  right: 0;
+}
+
+.architectureArch {
+  position: absolute;
+
+  top: 15px;
+  left: 16px;
+
+  width: calc(100% - 32px);
+
+  height: calc(100% - 30px);
+
+  border: 1px solid rgba(177, 125, 59, 0.27);
+
+  border-radius: 100px 100px 3px 3px;
+}
+
+/* =========================================================
+   MOSQUE / TAJ-STYLE SILHOUETTE
+========================================================= */
+
+.mosqueIllustration {
+  position: absolute;
+
+  bottom: 65px;
+  left: 50%;
+
+  width: 150px;
+  height: 170px;
+
+  transform: translateX(-50%);
+
+  opacity: 0.34;
+}
+
+.mosqueDome {
+  position: absolute;
+
+  left: 50%;
+  bottom: 72px;
+
+  width: 72px;
+  height: 50px;
+
+  transform: translateX(-50%);
+
+  border: 1px solid var(--schedule-gold-soft);
+
+  border-radius: 50% 50% 8% 8%;
+
+  background: rgba(225, 198, 156, 0.2);
+}
+
+.mosqueDome::before {
+  content: "";
+
+  position: absolute;
+
+  top: -22px;
+  left: 50%;
+
+  width: 1px;
+  height: 24px;
+
+  transform: translateX(-50%);
+
+  background: var(--schedule-gold);
+}
+
+.mosqueDome::after {
+  content: "◇";
+
+  position: absolute;
+
+  top: -32px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: var(--schedule-gold);
+
+  font-size: 11px;
+}
+
+.mosqueBody {
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  width: 105px;
+  height: 55px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid rgba(177, 125, 59, 0.7);
+
+  border-bottom: none;
+}
+
+.mosqueBody span {
+  width: 18px;
+  height: 34px;
+
+  border: 1px solid rgba(177, 125, 59, 0.7);
+
+  border-radius: 12px 12px 0 0;
+}
+
+.minaret {
+  position: absolute;
+
+  bottom: 25px;
+
+  width: 9px;
+  height: 105px;
+
+  border: 1px solid rgba(177, 125, 59, 0.72);
+
+  background: rgba(226, 202, 166, 0.2);
+}
+
+.minaret::before {
+  content: "";
+
+  position: absolute;
+
+  top: -14px;
+  left: -5px;
+
+  width: 17px;
+  height: 16px;
+
+  border: 1px solid rgba(177, 125, 59, 0.7);
+
+  border-radius: 50% 50% 0 0;
+}
+
+.minaretLeft {
+  left: 8px;
+}
+
+.minaretRight {
+  right: 8px;
+}
+
+/* =========================================================
+   LANTERNS
+========================================================= */
+
+.lanternGroup {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 78px;
+
+  pointer-events: none;
+}
+
+.lanternGroupLeft {
+  left: 75px;
+
+  width: 115px;
+}
+
+.lanternGroupRight {
+  right: 83px;
+
+  width: 65px;
+}
+
+.lantern {
+  position: absolute;
+
+  width: 40px;
+
+  color: #9a692e;
+}
+
+.lanternGroupLeft .lanternOne {
+  top: 0;
+  left: 0;
+}
+
+.lanternGroupLeft .lanternTwo {
+  top: 58px;
+  right: 0;
+}
+
+.lanternGroupRight .lanternOne {
+  top: 0;
+  right: 0;
+}
+
+.lanternChain {
+  position: absolute;
+
+  bottom: 100%;
+  left: 50%;
+
+  width: 1px;
+  height: 68px;
+
+  background: rgba(138, 91, 38, 0.65);
+}
+
+.lanternTop {
+  width: 20px;
+  height: 8px;
+
+  margin: 0 auto;
+
+  border: 1px solid currentColor;
+
+  border-radius: 50% 50% 0 0;
+}
+
+.lanternBody {
+  position: relative;
+
+  width: 38px;
+  height: 58px;
+
+  margin-top: 1px;
+
+  border: 2px solid currentColor;
+
+  clip-path: polygon(18% 0, 82% 0, 100% 18%, 83% 100%, 17% 100%, 0 18%);
+
+  background: linear-gradient(
+    90deg,
+    rgba(245, 208, 135, 0.18),
+    rgba(255, 235, 185, 0.55),
+    rgba(245, 208, 135, 0.18)
+  );
+
+  box-shadow: 0 0 18px rgba(210, 160, 78, 0.16);
+}
+
+.lanternBody::before,
+.lanternBody::after {
+  content: "";
+
+  position: absolute;
+
+  top: 7px;
+  bottom: 7px;
+
+  width: 1px;
+
+  background: rgba(138, 91, 38, 0.6);
+}
+
+.lanternBody::before {
+  left: 12px;
+}
+
+.lanternBody::after {
+  right: 12px;
+}
+
+.lanternBody i {
+  position: absolute;
+
+  top: 17px;
+  left: 50%;
+
+  width: 9px;
+  height: 17px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50% 50% 45% 45%;
+
+  background: rgba(222, 163, 69, 0.45);
+
+  box-shadow: 0 0 12px rgba(225, 168, 75, 0.45);
+}
+
+.lanternBottom {
+  width: 20px;
+  height: 8px;
+
+  margin: 1px auto 0;
+
+  border: 1px solid currentColor;
+
+  border-radius: 0 0 50% 50%;
+}
+
+/* =========================================================
+   BOTANICAL / FLOWERS
+========================================================= */
+
+.botanical {
+  position: absolute;
+
+  z-index: 4;
+
+  width: 200px;
+  height: 260px;
+
+  pointer-events: none;
+
+  opacity: 0.78;
+}
+
+.botanicalMirror {
+  transform: scaleX(-1);
+}
+
+.botanicalTopLeft {
+  top: 67px;
+  left: -25px;
+}
+
+.botanicalTopRight {
+  top: 66px;
+  right: -28px;
+}
+
+.botanicalMiddleLeft {
+  top: 690px;
+  left: -52px;
+
+  transform: rotate(-6deg);
+}
+
+.botanicalBottomLeft {
+  bottom: 35px;
+  left: -35px;
+}
+
+.botanicalBottomRight {
+  right: -35px;
+  bottom: 15px;
+}
+
+.botanicalStem {
+  position: absolute;
+
+  left: 74px;
+  top: 22px;
+
+  width: 2px;
+  height: 225px;
+
+  transform: rotate(-23deg);
+
+  transform-origin: bottom;
+
+  background: linear-gradient(var(--schedule-green), rgba(104, 112, 91, 0.15));
+}
+
+.leaf {
+  position: absolute;
+
+  color: var(--schedule-green);
+
+  font-family: Georgia, serif;
+
+  line-height: 1;
+}
+
+.leafOne {
+  top: 42px;
+  left: 46px;
+
+  font-size: 78px;
+
+  transform: rotate(-22deg);
+}
+
+.leafTwo {
+  top: 95px;
+  left: 77px;
+
+  font-size: 88px;
+
+  transform: rotate(24deg);
+}
+
+.leafThree {
+  top: 145px;
+  left: 28px;
+
+  font-size: 91px;
+
+  transform: rotate(-18deg);
+}
+
+.flower {
+  position: absolute;
+
+  color: var(--schedule-blush);
+
+  font-family: Georgia, serif;
+
+  text-shadow: 0 2px 2px rgba(113, 69, 49, 0.1);
+}
+
+.flowerOne {
+  top: 5px;
+  left: 18px;
+
+  font-size: 85px;
+}
+
+.flowerTwo {
+  top: 120px;
+  left: 77px;
+
+  color: #e2c4b2;
+
+  font-size: 67px;
+}
+
+.goldBud {
+  position: absolute;
+
+  top: 176px;
+  left: 37px;
+
+  color: #b68a4d;
+
+  font-size: 30px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.heroOrnament {
+  color: var(--schedule-gold);
+
+  font-size: 27px;
+}
+
+.eyebrow {
+  margin: 20px 0 0;
+
+  color: #8a5c34;
+
+  font-family: var(--schedule-sans);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.55em;
+
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 14px 0 0;
+
+  color: var(--schedule-maroon);
+
+  font-family: var(--schedule-serif);
+
+  font-size: clamp(4.3rem, 7vw, 6.6rem);
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.035em;
+}
+
+.titleDivider {
+  width: 130px;
+
+  margin: 20px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--schedule-gold);
+}
+
+.titleDivider span {
+  height: 1px;
+
+  background: rgba(177, 125, 59, 0.5);
+}
+
+.titleDivider b {
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+.heroSubtitle {
+  margin: 16px 0 0;
+
+  color: #6b5950;
+
+  font-family: var(--schedule-serif);
+
+  font-size: 21px;
+
+  font-style: italic;
+}
+
+/* =========================================================
+   DATE SELECTOR
+========================================================= */
+
+.dateSelector {
+  position: relative;
+
+  z-index: 12;
+
+  width: min(700px, 100%);
+
+  margin: 52px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+.dateButton {
+  position: relative;
+
+  min-height: 76px;
+
+  padding: 10px 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 17px;
+
+  cursor: pointer;
+
+  border: 1px solid #c99857;
+
+  border-radius: 24px;
+
+  outline: 3px double rgba(197, 148, 79, 0.32);
+
+  outline-offset: -5px;
+
+  background: rgba(255, 249, 240, 0.88);
+
+  color: var(--schedule-maroon);
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.dateButton:hover {
+  transform: translateY(-2px);
+}
+
+.dateButtonActive {
+  border-color: #b98745;
+
+  background: linear-gradient(180deg, #8a2932, #701e27);
+
+  color: #fff7eb;
+
+  box-shadow: 0 8px 18px rgba(103, 32, 39, 0.16);
+}
+
+.dateIcon {
+  color: var(--schedule-gold);
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+}
+
+.dateButtonText {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  text-align: left;
+}
+
+.dateButtonText strong {
+  font-family: var(--schedule-serif);
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.dateButtonText small {
+  margin-top: 3px;
+
+  font-family: var(--schedule-sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   TIMELINE SHELL
+========================================================= */
+
+.timelineShell {
+  position: relative;
+
+  width: min(880px, 100%);
+
+  margin: 48px auto 0;
+
+  padding: 55px 55px 58px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(177, 125, 59, 0.52);
+
+  border-radius: 140px 140px 28px 28px;
+
+  background: rgba(255, 250, 243, 0.74);
+
+  box-shadow: inset 0 0 55px rgba(177, 125, 59, 0.035);
+}
+
+.timelineInnerBorder {
+  position: absolute;
+
+  inset: 8px;
+
+  pointer-events: none;
+
+  border: 1px solid rgba(177, 125, 59, 0.15);
+
+  border-radius: 132px 132px 22px 22px;
+}
+
+.timelineContent {
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================================================
+   DAY HEADING
+========================================================= */
+
+.dayHeading {
+  text-align: center;
+}
+
+.dayOrnament {
+  color: var(--schedule-gold);
+
+  font-size: 25px;
+}
+
+.dayHeading > p {
+  margin: 18px 0 0;
+
+  color: #8b633d;
+
+  font-family: var(--schedule-sans);
+
+  font-size: 11px;
+
+  letter-spacing: 0.55em;
+
+  text-transform: uppercase;
+}
+
+.dayHeading h2 {
+  margin: 7px 0 0;
+
+  color: var(--schedule-maroon);
+
+  font-family: var(--schedule-serif);
+
+  font-size: 30px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.dayHeadingDivider {
+  width: 130px;
+
+  margin: 13px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--schedule-gold);
+}
+
+.dayHeadingDivider span {
+  height: 1px;
+
+  background: rgba(177, 125, 59, 0.45);
+}
+
+.dayHeadingDivider b {
+  font-size: 9px;
+
+  font-weight: normal;
+}
+
+.dayHeading em {
+  display: block;
+
+  margin-top: 14px;
+
+  color: #746159;
+
+  font-family: var(--schedule-serif);
+
+  font-size: 17px;
+}
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+  position: relative;
+
+  width: min(650px, 100%);
+
+  margin: 38px auto 0;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  /* 120 time + 15 gap + 68 icon + 15 gap
+     + half of 30px marker column */
+  left: 233px;
+
+  top: 46px;
+  bottom: 46px;
+
+  width: 1px;
+
+  transform: translateX(-50%);
+
+  background: rgba(177, 125, 59, 0.72);
+
+  z-index: 0;
+}
+
+.timelineEvent {
+  position: relative;
+
+  min-height: 92px;
+
+  display: grid;
+
+  grid-template-columns:
+    120px
+    68px
+    30px
+    1fr;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.timelineEvent time {
+  color: var(--schedule-maroon);
+
+  font-family: var(--schedule-serif);
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.eventIcon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(177, 125, 59, 0.28);
+
+  border-radius: 50%;
+
+  background: rgba(247, 232, 214, 0.55);
+
+  color: #8c6036;
+}
+
+.timelineMarker {
+  position: relative;
+
+  z-index: 2;
+
+  width: 30px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #a87536;
+
+  font-size: 15px;
+}
+
+.timelineMarker span {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  background: #fff8ef;
+
+  line-height: 1;
+}
+
+.eventDetails {
+  padding-left: 5px;
+}
+
+.eventDetails h3 {
+  margin: 0;
+
+  color: var(--schedule-maroon);
+
+  font-family: var(--schedule-serif);
+
+  font-size: 23px;
+
+  font-weight: 500;
+}
+
+.eventDetails p {
+  max-width: 285px;
+
+  margin: 3px 0 0;
+
+  color: #65544c;
+
+  font-family: var(--schedule-serif);
+
+  font-size: 16px;
+
+  line-height: 1.25;
+}
+
+/* =========================================================
+   GENTLE NOTE
+========================================================= */
+
+.gentleNote {
+  position: relative;
+
+  width: min(880px, 100%);
+
+  margin: 22px auto 0;
+
+  padding: 35px 35px 31px;
+
+  border: 1px solid rgba(190, 144, 91, 0.24);
+
+  border-radius: 34px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(238, 212, 193, 0.37),
+    rgba(253, 242, 231, 0.76),
+    rgba(238, 212, 193, 0.37)
+  );
+
+  text-align: center;
+}
+
+.noteOrnament {
+  color: var(--schedule-gold);
+
+  font-size: 23px;
+}
+
+.gentleNote h2 {
+  margin: 7px 0 0;
+
+  color: #875d37;
+
+  font-family: var(--schedule-sans);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5em;
+
+  text-transform: uppercase;
+}
+
+.noteDivider {
+  width: 110px;
+
+  margin: 12px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--schedule-gold);
+}
+
+.noteDivider span {
+  height: 1px;
+
+  background: rgba(177, 125, 59, 0.42);
+}
+
+.noteDivider b {
+  font-size: 8px;
+
+  font-weight: normal;
+}
+
+.gentleNote p {
+  margin: 13px 0 0;
+
+  color: #66554d;
+
+  font-family: var(--schedule-serif);
+
+  font-size: 18px;
+
+  font-style: italic;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   BOTTOM BUTTONS
+========================================================= */
+
+.navigationButtons {
+  width: min(650px, 100%);
+
+  margin: 17px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+.bottomButton {
+  min-height: 58px;
+
+  padding: 0 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  border-radius: 23px;
+
+  font-family: var(--schedule-serif);
+
+  font-size: 17px;
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.bottomButton:hover {
+  transform: translateY(-3px);
+}
+
+.bottomButton svg:last-child {
+  margin-left: auto;
+
+  transition: transform 250ms ease;
+}
+
+.bottomButton:hover svg:last-child {
+  transform: translateX(4px);
+}
+
+.primaryButton {
+  border: 1px solid #bd8745;
+
+  outline: 2px solid rgba(205, 162, 100, 0.35);
+
+  outline-offset: -5px;
+
+  background: linear-gradient(180deg, #8a2932, #711e27);
+
+  color: #fff8ef;
+
+  box-shadow: 0 7px 17px rgba(99, 31, 38, 0.16);
+}
+
+.secondaryButton {
+  border: 1px solid #c59455;
+
+  outline: 2px solid rgba(205, 162, 100, 0.25);
+
+  outline-offset: -5px;
+
+  background: rgba(255, 249, 240, 0.8);
+
+  color: var(--schedule-maroon);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.scheduleFooter {
+  padding: 30px 20px 10px;
+
+  text-align: center;
+}
+
+.footerOrnament {
+  color: var(--schedule-gold);
+
+  font-size: 25px;
+}
+
+.scheduleFooter p {
+  margin: 14px 0 0;
+
+  color: #a06e43;
+
+  font-family: var(--schedule-sans);
+
+  font-size: 8px;
+
+  letter-spacing: 0.48em;
+
+  text-transform: uppercase;
+}
+
+.footerDivider {
+  width: 120px;
+
+  margin: 14px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--schedule-gold);
+}
+
+.footerDivider span {
+  height: 1px;
+
+  background: rgba(177, 125, 59, 0.38);
+}
+
+.footerDivider b {
+  font-size: 8px;
+
+  font-weight: normal;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .pageContent {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  .architecturePanel {
+    width: 135px;
+
+    opacity: 0.3;
+  }
+
+  .lanternGroupLeft {
+    left: 24px;
+  }
+
+  .lanternGroupRight {
+    right: 30px;
+  }
+
+  .botanical {
+    opacity: 0.45;
+
+    transform: scale(0.78);
+  }
+
+  .botanicalMirror {
+    transform: scaleX(-1) scale(0.78);
+  }
+
+  .timelineShell {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .pageContent {
+    padding: 115px 18px 40px;
+  }
+
+  /* hide large desktop side architecture */
+
+  .architecturePanel {
+    display: none;
+  }
+
+  .lanternGroup {
+    opacity: 0.4;
+
+    transform: scale(0.68);
+  }
+
+  .lanternGroupLeft {
+    top: 85px;
+    left: 3px;
+  }
+
+  .lanternGroupRight {
+    top: 85px;
+    right: 3px;
+  }
+
+  .botanical {
+    width: 130px;
+    height: 170px;
+
+    opacity: 0.28;
+
+    transform: scale(0.6);
+  }
+
+  .botanicalMirror {
+    transform: scaleX(-1) scale(0.6);
+  }
+
+  .botanicalTopLeft {
+    top: 75px;
+    left: -45px;
+  }
+
+  .botanicalTopRight {
+    top: 75px;
+    right: -45px;
+  }
+
+  .botanicalMiddleLeft {
+    display: none;
+  }
+
+  .botanicalBottomLeft,
+  .botanicalBottomRight {
+    bottom: -15px;
+  }
+
+  /* hero */
+
+  .heroOrnament {
+    font-size: 21px;
+  }
+
+  .eyebrow {
+    margin-top: 15px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.42em;
+  }
+
+  .hero h1 {
+    margin-top: 12px;
+
+    font-size: clamp(3.6rem, 15vw, 5rem);
+  }
+
+  .heroSubtitle {
+    padding: 0 30px;
+
+    font-size: 17px;
+
+    line-height: 1.35;
+  }
+
+  /* date tabs */
+
+  .dateSelector {
+    margin-top: 38px;
+
+    grid-template-columns: 1fr;
+
+    max-width: 380px;
+  }
+
+  .dateButton {
+    min-height: 67px;
+  }
+
+  .dateButtonText strong {
+    font-size: 18px;
+  }
+
+  /* timeline shell */
+
+  .timelineShell {
+    margin-top: 34px;
+
+    padding: 43px 20px 40px;
+
+    border-radius: 70px 70px 20px 20px;
+  }
+
+  .timelineInnerBorder {
+    border-radius: 64px 64px 15px 15px;
+  }
+
+  .dayHeading > p {
+    font-size: 8px;
+
+    letter-spacing: 0.42em;
+  }
+
+  .dayHeading h2 {
+    font-size: 24px;
+
+    letter-spacing: 0.1em;
+  }
+
+  .dayHeading em {
+    padding: 0 15px;
+
+    font-size: 15px;
+  }
+
+  /* timeline */
+
+  .timeline {
+    margin-top: 34px;
+  }
+
+  .timeline::before {
+    left: 29px;
+
+    top: 27px;
+    bottom: 27px;
+  }
+
+  .timelineEvent {
+    min-height: 110px;
+
+    grid-template-columns:
+      58px
+      1fr;
+
+    grid-template-areas:
+      "icon detail"
+      "time detail";
+
+    align-items: start;
+
+    column-gap: 18px;
+
+    padding-bottom: 16px;
+  }
+
+  .timelineEvent time {
+    grid-area: time;
+
+    padding-top: 5px;
+
+    font-size: 14px;
+
+    text-align: center;
+  }
+
+  .eventIcon {
+    grid-area: icon;
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 56px;
+    height: 56px;
+
+    background: #fbf0e2;
+  }
+
+  .timelineMarker {
+    display: none;
+  }
+
+  .eventDetails {
+    grid-area: detail;
+
+    padding: 5px 0 0;
+  }
+
+  .eventDetails h3 {
+    font-size: 21px;
+  }
+
+  .eventDetails p {
+    margin-top: 5px;
+
+    font-size: 15px;
+
+    line-height: 1.35;
+  }
+
+  /* gentle note */
+
+  .gentleNote {
+    padding: 30px 20px 28px;
+
+    border-radius: 24px;
+  }
+
+  .gentleNote h2 {
+    font-size: 9px;
+
+    letter-spacing: 0.4em;
+  }
+
+  .gentleNote p {
+    font-size: 16px;
+  }
+
+  .gentleNote p br {
+    display: none;
+  }
+
+  /* buttons */
+
+  .navigationButtons {
+    grid-template-columns: 1fr;
+
+    max-width: 380px;
+  }
+
+  .bottomButton {
+    min-height: 56px;
+  }
+
+  /* footer */
+
+  .scheduleFooter p {
+    padding: 0 25px;
+
+    font-size: 7px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.35em;
+  }
+}

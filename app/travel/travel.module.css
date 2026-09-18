@@ -1,0 +1,1654 @@
+.page {
+  --cream: #fbf3e7;
+  --cream-light: #fffaf3;
+  --maroon: #78232b;
+  --maroon-dark: #5e1821;
+  --gold: #b17d3b;
+  --gold-soft: #d8b477;
+  --brown: #59473f;
+  --muted: #806b60;
+  --green: #68725d;
+
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 255, 255, 0.88),
+      transparent 31%
+    ),
+    linear-gradient(180deg, #fff9f0 0%, var(--cream) 52%, #fff8ee 100%);
+
+  color: var(--brown);
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.paperTexture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+
+  background-image:
+    radial-gradient(rgba(112, 70, 39, 0.055) 0.7px, transparent 0.7px),
+    radial-gradient(rgba(177, 125, 59, 0.035) 0.8px, transparent 0.8px);
+
+  background-size:
+    20px 20px,
+    31px 31px;
+
+  background-position:
+    0 0,
+    10px 13px;
+}
+
+.backgroundArch {
+  position: absolute;
+  z-index: 0;
+
+  top: 85px;
+  left: 50%;
+
+  width: min(94vw, 1400px);
+  height: 670px;
+
+  transform: translateX(-50%);
+
+  border: 1px solid rgba(177, 125, 59, 0.18);
+  border-bottom: 0;
+
+  border-radius: 48% 48% 0 0 / 35% 35% 0 0;
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero,
+.locationsSection,
+.routeSection,
+.notesSection,
+.helpSection,
+.bottomSection {
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  min-height: 555px;
+  padding: 155px 70px 90px;
+
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  max-width: 850px;
+}
+
+.heroOrnament {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: var(--gold);
+  font-size: 29px;
+}
+
+.eyebrow {
+  margin: 0;
+
+  color: var(--maroon);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.34em;
+}
+
+.hero h1 {
+  margin: 15px 0 0;
+
+  color: var(--maroon-dark);
+
+  font-size: clamp(3.8rem, 6vw, 5.7rem);
+  line-height: 0.97;
+
+  font-weight: 500;
+}
+
+.heroSubtitle {
+  margin: 22px auto 0;
+
+  color: var(--brown);
+
+  font-size: 21px;
+  line-height: 1.45;
+
+  letter-spacing: 0.02em;
+}
+
+.divider {
+  width: 190px;
+  margin: 23px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+  gap: 12px;
+
+  color: var(--gold);
+}
+
+.divider span {
+  height: 1px;
+
+  background: rgba(177, 125, 59, 0.65);
+}
+
+.divider b {
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.sideMessage {
+  position: absolute;
+  top: 245px;
+
+  display: flex;
+  flex-direction: column;
+
+  color: var(--maroon);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 11px;
+  line-height: 1.95;
+
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.sideMessage i {
+  margin-top: 9px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+  font-style: normal;
+}
+
+.sideLeft {
+  left: 5%;
+}
+
+.sideRight {
+  right: 5%;
+}
+
+/* ==========================================
+   LANTERNS
+========================================== */
+
+.lantern {
+  position: absolute;
+  z-index: 4;
+
+  top: 0;
+
+  width: 58px;
+  height: 190px;
+
+  pointer-events: none;
+}
+
+.lanternLeft {
+  left: 13%;
+}
+
+.lanternRight {
+  right: 13%;
+}
+
+.lanternChain {
+  width: 1px;
+  height: 78px;
+  margin: auto;
+
+  background: var(--gold);
+}
+
+.lanternCap {
+  width: 30px;
+  height: 10px;
+
+  margin: auto;
+
+  border: 2px solid var(--gold);
+  border-radius: 50% 50% 2px 2px;
+}
+
+.lanternBody {
+  position: relative;
+
+  width: 43px;
+  height: 62px;
+
+  margin: auto;
+
+  border: 2px solid var(--gold);
+
+  border-radius: 8px 8px 16px 16px;
+
+  background:
+    radial-gradient(circle, rgba(255, 213, 109, 0.65), transparent 60%),
+    rgba(255, 243, 201, 0.43);
+
+  box-shadow: 0 0 25px rgba(205, 153, 59, 0.22);
+}
+
+.lanternBody i {
+  position: absolute;
+
+  top: 4px;
+  bottom: 5px;
+
+  width: 1px;
+
+  background: rgba(177, 125, 59, 0.82);
+}
+
+.lanternBody i:nth-child(1) {
+  left: 10px;
+}
+
+.lanternBody i:nth-child(2) {
+  left: 20px;
+}
+
+.lanternBody i:nth-child(3) {
+  right: 10px;
+}
+
+.lanternTip {
+  width: 13px;
+  height: 13px;
+
+  margin: -1px auto;
+
+  border-left: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+
+  transform: rotate(-45deg);
+}
+
+/* ==========================================
+   FLOWERS / LEAVES
+========================================== */
+
+.floralCorner {
+  position: absolute;
+  z-index: 5;
+
+  width: 170px;
+  height: 150px;
+
+  color: var(--green);
+
+  pointer-events: none;
+}
+
+.topLeft {
+  top: 68px;
+  left: -15px;
+}
+
+.topRight {
+  top: 68px;
+  right: -15px;
+
+  transform: scaleX(-1);
+}
+
+.bottomLeft {
+  bottom: 15px;
+  left: -15px;
+
+  transform: rotate(-18deg);
+}
+
+.bottomRight {
+  right: -15px;
+  bottom: 15px;
+
+  transform: scaleX(-1) rotate(-18deg);
+}
+
+.bigLeaf,
+.secondLeaf {
+  position: absolute;
+
+  color: var(--green);
+  line-height: 1;
+}
+
+.bigLeaf {
+  top: 22px;
+  left: 0;
+
+  font-size: 105px;
+
+  transform: rotate(-26deg);
+}
+
+.secondLeaf {
+  top: 1px;
+  left: 60px;
+
+  font-size: 75px;
+
+  transform: rotate(35deg);
+}
+
+.bigFlower {
+  position: absolute;
+
+  top: 20px;
+  left: 45px;
+
+  color: #f6eee1;
+
+  font-size: 57px;
+
+  text-shadow: 0 0 0.5px var(--gold);
+}
+
+.smallFlower {
+  position: absolute;
+
+  top: 67px;
+  left: 93px;
+
+  color: #faf2e7;
+
+  font-size: 32px;
+
+  text-shadow: 0 0 0.5px var(--gold);
+}
+
+/* ==========================================
+   MUGHAL SKYLINE
+========================================== */
+
+.skyline {
+  position: absolute;
+  z-index: 1;
+
+  bottom: 8px;
+  left: 50%;
+
+  width: min(700px, 70vw);
+  height: 145px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  gap: 22px;
+
+  color: var(--gold);
+  opacity: 0.11;
+
+  pointer-events: none;
+}
+
+.minaret {
+  position: relative;
+
+  width: 22px;
+  height: 118px;
+
+  border-radius: 12px 12px 0 0;
+
+  background: currentColor;
+}
+
+.minaret::before {
+  content: "";
+
+  position: absolute;
+
+  top: -23px;
+  left: 9px;
+
+  width: 3px;
+  height: 25px;
+
+  background: currentColor;
+}
+
+.minaret span {
+  position: absolute;
+
+  top: 28px;
+  left: -5px;
+
+  width: 31px;
+  height: 6px;
+
+  background: currentColor;
+}
+
+.smallDome {
+  width: 80px;
+  height: 75px;
+
+  border-radius: 50% 50% 7px 7px;
+
+  background: currentColor;
+}
+
+.centralPalace {
+  position: relative;
+
+  width: 190px;
+}
+
+.centralDome {
+  position: relative;
+
+  width: 118px;
+  height: 82px;
+
+  margin: auto;
+
+  border-radius: 55% 55% 10px 10px;
+
+  background: currentColor;
+}
+
+.centralDome::before {
+  content: "";
+
+  position: absolute;
+
+  top: -26px;
+  left: 50%;
+
+  width: 4px;
+  height: 29px;
+
+  background: currentColor;
+}
+
+.centralBase {
+  height: 55px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+
+  background: currentColor;
+}
+
+.centralBase i {
+  width: 30px;
+  height: 37px;
+
+  border-radius: 18px 18px 0 0;
+
+  background: var(--cream);
+}
+
+/* ==========================================
+   PICKUP LOCATION CARDS
+========================================== */
+
+.locationsSection {
+  width: min(1250px, calc(100% - 55px));
+
+  margin: 0 auto;
+}
+
+.locationGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.locationCard {
+  position: relative;
+
+  min-height: 680px;
+
+  padding: 30px 26px 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid rgba(177, 125, 59, 0.8);
+
+  border-radius: 28px 28px 24px 24px;
+
+  background: rgba(255, 250, 242, 0.64);
+
+  box-shadow: 0 18px 50px rgba(91, 57, 34, 0.045);
+}
+
+.cardCrown {
+  position: absolute;
+
+  top: -14px;
+  left: 50%;
+
+  width: 80px;
+  height: 28px;
+
+  transform: translateX(-50%);
+
+  border: 1px solid var(--gold);
+  border-bottom: 0;
+
+  border-radius: 50px 50px 0 0;
+
+  background: var(--cream);
+}
+
+.locationCard h2 {
+  position: relative;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: var(--maroon);
+
+  font-size: 25px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.locationSubtitle {
+  margin: 3px 0 0;
+
+  color: var(--maroon);
+
+  text-align: center;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Actual pickup images */
+
+.pickupImageWrapper {
+  position: relative;
+
+  width: 100%;
+  height: 190px;
+
+  margin: 17px 0 20px;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid rgba(177, 125, 59, 0.18);
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(177, 125, 59, 0.06),
+    transparent 70%
+  );
+}
+
+.pickupImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+.locationDetails {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  flex: 1;
+}
+
+.detailRow {
+  display: grid;
+
+  grid-template-columns: 26px 1fr;
+
+  gap: 10px;
+
+  align-items: start;
+
+  font-size: 15px;
+  line-height: 1.28;
+}
+
+.detailIcon {
+  padding-top: 1px;
+
+  color: var(--maroon);
+}
+
+.detailLabel {
+  color: var(--maroon);
+}
+
+.detailRow strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--brown);
+
+  font-size: 16px;
+}
+
+.phoneList {
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: 8px;
+  row-gap: 2px;
+}
+
+.phoneList a {
+  color: var(--brown);
+
+  text-decoration: none;
+}
+
+.phoneList a:not(:last-child)::after {
+  content: " /";
+
+  color: var(--gold);
+}
+
+.mapButton,
+.mapButtonDisabled {
+  min-height: 47px;
+
+  margin-top: 19px;
+  padding: 0 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 9px;
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+  text-decoration: none;
+}
+
+.mapButton {
+  color: #fff9ef;
+
+  background: linear-gradient(135deg, var(--maroon-dark), #8f1824);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.mapButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(120, 35, 43, 0.17);
+}
+
+.mapButtonDisabled {
+  color: rgba(255, 255, 255, 0.9);
+
+  background: #766e64;
+}
+
+/* ==========================================
+   ROUTE MAP
+========================================== */
+
+.routeSection {
+  width: min(1250px, calc(100% - 55px));
+
+  margin: 0 auto;
+}
+
+.routeScene {
+  position: relative;
+
+  height: 760px;
+
+  margin-top: -1px;
+
+  overflow: hidden;
+}
+
+.routeBranch {
+  position: absolute;
+
+  top: -20px;
+
+  width: 37%;
+  height: 345px;
+
+  border-bottom: 34px solid rgba(185, 135, 72, 0.5);
+
+  pointer-events: none;
+}
+
+.routeBranch::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -20px;
+
+  width: 100%;
+
+  border-bottom: 2px dashed rgba(255, 250, 238, 0.82);
+}
+
+.routeLeft {
+  left: 7%;
+
+  border-radius: 0 0 75% 45%;
+
+  transform: rotate(-16deg);
+}
+
+.routeCenter {
+  left: 31.5%;
+
+  width: 37%;
+
+  border-radius: 0 0 50% 50%;
+}
+
+.routeRight {
+  right: 7%;
+
+  border-radius: 0 0 45% 75%;
+
+  transform: rotate(-16deg);
+}
+
+.routeLabel {
+  position: absolute;
+  z-index: 3;
+
+  top: 34px;
+
+  padding: 7px 14px;
+
+  border: 1px solid var(--gold);
+
+  background: #e7c88e;
+
+  color: var(--maroon-dark);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  box-shadow: 0 4px 12px rgba(92, 56, 34, 0.08);
+}
+
+.balliaLabel {
+  left: 8%;
+}
+
+.rasraLabel {
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.nagaraLabel {
+  right: 8%;
+}
+
+/* Actual baarat car image */
+
+.baaratCar {
+  position: absolute;
+  z-index: 4;
+
+  width: 135px;
+  height: 85px;
+}
+
+.carImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+.carLeft {
+  top: 160px;
+  left: 15%;
+
+  transform: rotate(10deg);
+}
+
+.carCenter {
+  top: 140px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.carRight {
+  top: 160px;
+  right: 15%;
+
+  transform: rotate(-10deg) scaleX(-1);
+}
+
+.routeFlowersLeft,
+.routeFlowersRight {
+  position: absolute;
+  z-index: 3;
+
+  top: 225px;
+
+  color: var(--green);
+
+  font-size: 27px;
+  letter-spacing: 8px;
+
+  opacity: 0.55;
+}
+
+.routeFlowersLeft {
+  left: 13%;
+}
+
+.routeFlowersRight {
+  right: 13%;
+}
+
+/* ==========================================
+   R.P. PALACE DESTINATION
+========================================== */
+
+.destination {
+  position: absolute;
+  z-index: 6;
+
+  /* Palace sits BELOW the cars, at road convergence */
+  top: 390px;
+  left: 30%;
+
+  width: 500px;
+  max-width: 90%;
+
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.palaceImageWrapper {
+  position: relative;
+
+  width: 410px;
+  max-width: 100%;
+  height: 175px;
+
+  margin: 0 auto;
+}
+
+.palaceImage {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.palaceSign {
+  position: relative;
+  z-index: 2;
+
+  width: 230px;
+
+  margin: -25px auto 0;
+
+  padding: 9px 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--gold);
+
+  background: var(--maroon-dark);
+
+  color: #fff5e5;
+
+  box-shadow: 0 5px 15px rgba(80, 39, 24, 0.12);
+}
+
+.palaceSign strong {
+  font-size: 20px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.palaceSign span {
+  margin-top: 2px;
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.arrivalCard {
+  margin-top: 16px;
+
+  padding: 14px 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 28px;
+
+  background: rgba(255, 250, 241, 0.92);
+
+  color: var(--gold);
+}
+
+.arrivalCard div {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrivalCard p {
+  margin: 0;
+
+  color: var(--brown);
+
+  font-size: 15px;
+}
+
+.arrivalCard strong {
+  color: var(--maroon);
+
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.arrivalCard span {
+  margin-top: 3px;
+
+  color: var(--maroon);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 8px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.destinationMap {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 10px;
+
+  color: var(--maroon);
+
+  font-size: 14px;
+
+  text-decoration: none;
+}
+
+/* ==========================================
+   JOURNEY NOTES
+========================================== */
+
+.notesSection {
+  width: min(1250px, calc(100% - 55px));
+
+  margin: 20px auto 0;
+}
+
+.notesPanel {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 28px 15px;
+
+  border: 1px solid rgba(177, 125, 59, 0.62);
+
+  border-radius: 28px;
+
+  background: rgba(255, 250, 242, 0.57);
+}
+
+.journeyNote {
+  padding: 0 25px;
+
+  text-align: center;
+}
+
+.journeyNote + .journeyNote {
+  border-left: 1px solid rgba(177, 125, 59, 0.32);
+}
+
+.noteIcon {
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 13px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+
+  color: var(--gold);
+}
+
+.journeyNote h3 {
+  margin: 0 0 9px;
+
+  color: var(--maroon);
+
+  font-size: 14px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+
+.journeyNote p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   HELP
+========================================== */
+
+.helpSection {
+  padding: 50px 25px 55px;
+
+  text-align: center;
+}
+
+.sectionHeading {
+  margin: 0;
+
+  color: var(--maroon);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.27em;
+}
+
+.helpSection .divider {
+  margin-top: 13px;
+}
+
+.helpText {
+  margin: 18px auto 0;
+
+  font-size: 17px;
+}
+
+.helpActions {
+  margin-top: 22px;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-width: 205px;
+  height: 48px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+
+  text-decoration: none;
+
+  transition: transform 180ms ease;
+}
+
+.primaryButton {
+  color: #fff8ee;
+
+  background: var(--maroon);
+}
+
+.secondaryButton {
+  border: 1px solid var(--gold);
+
+  color: var(--maroon);
+
+  background: rgba(255, 250, 242, 0.5);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+.bottomSection {
+  position: relative;
+
+  min-height: 180px;
+
+  padding: 75px 30px 30px;
+}
+
+.skylineBottom {
+  bottom: 12px;
+
+  width: min(850px, 80vw);
+
+  opacity: 0.07;
+}
+
+.finalMessage {
+  position: relative;
+  z-index: 3;
+
+  width: min(720px, 90%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.finalMessage span {
+  height: 1px;
+
+  background: rgba(177, 125, 59, 0.55);
+}
+
+.finalMessage p {
+  margin: 0;
+
+  color: var(--maroon);
+
+  font-family: "Montserrat", Arial, sans-serif;
+
+  font-size: 12px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  letter-spacing: 0.22em;
+}
+
+.finalDiamond {
+  position: relative;
+  z-index: 3;
+
+  margin-top: 16px;
+
+  color: var(--gold);
+
+  text-align: center;
+
+  font-size: 10px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+  .sideMessage {
+    display: none;
+  }
+
+  .locationGrid {
+    gap: 14px;
+  }
+
+  .locationCard {
+    padding: 28px 18px 22px;
+  }
+
+  .detailRow {
+    font-size: 14px;
+  }
+
+  .baaratCar {
+    width: 110px;
+    height: 72px;
+  }
+
+  .carLeft {
+    left: 13%;
+  }
+
+  .carRight {
+    right: 13%;
+  }
+
+  .notesPanel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journeyNote {
+    padding: 25px 30px;
+  }
+
+  .journeyNote:nth-child(3) {
+    border-left: 0;
+
+    border-top: 1px solid rgba(177, 125, 59, 0.32);
+  }
+
+  .journeyNote:nth-child(4) {
+    border-top: 1px solid rgba(177, 125, 59, 0.32);
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+  .backgroundArch {
+    top: 90px;
+
+    width: 120%;
+    height: 480px;
+  }
+
+  .hero {
+    min-height: 500px;
+
+    padding: 135px 22px 70px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.1rem, 14vw, 4.2rem);
+  }
+
+  .eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 0.27em;
+  }
+
+  .heroSubtitle {
+    padding: 0 10px;
+
+    font-size: 17px;
+  }
+
+  .heroSubtitle br {
+    display: none;
+  }
+
+  .sideMessage {
+    display: none;
+  }
+
+  .lantern {
+    transform: scale(0.7);
+
+    transform-origin: top center;
+  }
+
+  .lanternLeft {
+    left: 4%;
+  }
+
+  .lanternRight {
+    right: 4%;
+  }
+
+  .floralCorner {
+    transform: scale(0.65);
+
+    transform-origin: top left;
+  }
+
+  .topRight {
+    transform: scale(-0.65, 0.65);
+
+    transform-origin: top right;
+  }
+
+  .bottomLeft,
+  .bottomRight {
+    display: none;
+  }
+
+  .locationsSection,
+  .routeSection,
+  .notesSection {
+    width: calc(100% - 28px);
+  }
+
+  /* PICKUP CARDS */
+
+  .locationGrid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .locationCard {
+    min-height: auto;
+
+    padding: 29px 20px 22px;
+  }
+
+  .pickupImageWrapper {
+    height: 220px;
+  }
+
+  .detailRow {
+    font-size: 15px;
+  }
+
+  /* VERTICAL JOURNEY */
+
+  .routeScene {
+    height: 650px;
+
+    margin-top: 25px;
+  }
+
+  .routeBranch {
+    display: none;
+  }
+
+  .routeScene::before {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    bottom: 260px;
+    left: 50%;
+
+    width: 30px;
+
+    transform: translateX(-50%);
+
+    border-radius: 20px;
+
+    background: rgba(185, 135, 72, 0.43);
+  }
+
+  .routeScene::after {
+    content: "";
+
+    position: absolute;
+
+    top: 30px;
+    bottom: 265px;
+    left: 50%;
+
+    border-left: 2px dashed rgba(255, 250, 238, 0.9);
+
+    transform: translateX(-50%);
+  }
+
+  .routeLabel {
+    z-index: 3;
+  }
+
+  .balliaLabel {
+    top: 25px;
+    left: 8%;
+  }
+
+  .rasraLabel {
+    top: 115px;
+    left: auto;
+    right: 8%;
+
+    transform: none;
+  }
+
+  .nagaraLabel {
+    top: 205px;
+    left: 8%;
+    right: auto;
+  }
+
+  .baaratCar {
+    width: 100px;
+    height: 65px;
+  }
+
+  .carLeft {
+    top: 52px;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  .carCenter {
+    top: 142px;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  .carRight {
+    top: 232px;
+    right: auto;
+    left: 50%;
+
+    transform: translateX(-50%) scaleX(-1);
+  }
+
+  .routeFlowersLeft,
+  .routeFlowersRight {
+    display: none;
+  }
+
+  /* PALACE */
+
+  .destination {
+    top: auto;
+    bottom: 5px;
+    left: 23.5%;
+
+    width: min(360px, 94%);
+    max-width: 94%;
+
+    transform: translateX(-50%);
+  }
+
+  .palaceImageWrapper {
+    width: 330px;
+    max-width: 100%;
+    height: 165px;
+  }
+
+  .palaceSign {
+    width: 210px;
+
+    margin-top: -20px;
+  }
+
+  .arrivalCard {
+    padding: 13px 16px;
+
+    gap: 13px;
+  }
+
+  .arrivalCard strong {
+    font-size: 22px;
+  }
+
+  /* NOTES */
+
+  .notesPanel {
+    grid-template-columns: 1fr;
+
+    padding: 12px 22px;
+  }
+
+  .journeyNote {
+    padding: 27px 8px;
+  }
+
+  .journeyNote + .journeyNote {
+    border-left: 0;
+
+    border-top: 1px solid rgba(177, 125, 59, 0.32);
+  }
+
+  /* HELP */
+
+  .helpSection {
+    padding: 48px 22px;
+  }
+
+  .helpActions {
+    width: min(320px, 100%);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  /* FOOTER */
+
+  .finalMessage {
+    grid-template-columns: 30px 1fr 30px;
+
+    gap: 8px;
+  }
+
+  .finalMessage p {
+    font-size: 9px;
+    line-height: 1.7;
+
+    letter-spacing: 0.16em;
+  }
+
+  .skyline {
+    width: 90vw;
+
+    transform: translateX(-50%) scale(0.75);
+
+    transform-origin: bottom center;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 420px) {
+  .hero {
+    min-height: 480px;
+  }
+
+  .lanternLeft {
+    left: 0;
+  }
+
+  .lanternRight {
+    right: 0;
+  }
+
+  .locationCard h2 {
+    font-size: 23px;
+  }
+
+  .locationSubtitle {
+    font-size: 16px;
+  }
+
+  .pickupImageWrapper {
+    height: 190px;
+  }
+
+  .phoneList {
+    flex-direction: column;
+  }
+
+  .phoneList a::after {
+    display: none;
+  }
+
+  .palaceImageWrapper {
+    width: 290px;
+    height: 150px;
+  }
+}
