@@ -645,7 +645,7 @@ button {
 
 .wedding-menu-panel {
   position: fixed;
-
+  overflow-y: hidden;
   z-index: 110;
 
   top: 0;
@@ -720,8 +720,24 @@ button {
 
 .wedding-nav {
   display: flex;
-
   flex-direction: column;
+
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  padding-right: 4px;
+  padding-bottom: 20px;
+
+  scrollbar-width: none;
+}
+
+.wedding-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .wedding-nav a {
